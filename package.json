@@ -1,0 +1,20 @@
+{
+  "optionalDependencies": {},
+  "keywords": [],
+  "engines": {"node": ">=0.6"},
+  "licenses": [],
+  "devDependencies": {"nodeunit": ">=0.5.4"},
+  "homepage": "",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "author": "",
+  "scripts": {"test": "nodeunit tests/test.js"},
+  "repository": {},
+  "directories": {
+    "lib": "lib",
+    "tests": "tests"
+  },
+  "dependencies": {},
+  "description": "",
+  "name": "trinte-ejs"
+}
