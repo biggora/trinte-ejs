@@ -1,20 +1,35 @@
 {
   "optionalDependencies": {},
-  "keywords": [],
+  "keywords": [
+    "ejs",
+    "trinte",
+    "trintejs",
+    "caminte",
+  ],
   "engines": {"node": ">=0.6"},
   "licenses": [],
   "devDependencies": {"nodeunit": ">=0.5.4"},
-  "homepage": "",
+  "homepage": "http://www.trintejs.com/",
   "version": "0.0.1",
   "main": "./index.js",
-  "author": "",
+  "author": {
+    "name": "Aleksej Gordejev",
+    "email": "aleksej@gordejev.lv",
+    "url": "https://github.com/biggora/"
+  },
   "scripts": {"test": "nodeunit tests/test.js"},
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/biggora/trinte-ejs.git"
+  },
   "directories": {
     "lib": "lib",
     "tests": "tests"
   },
-  "dependencies": {},
-  "description": "",
+  "dependencies": {
+    "trinte": ">=0.1.0",
+    "ejs": ">=0.8.0",
+  },
+  "description": "Ejs templates module for TrinteJS Javascript MVC Framework",
   "name": "trinte-ejs"
 }
