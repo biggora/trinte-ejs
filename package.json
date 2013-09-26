@@ -29,6 +29,7 @@
   "dependencies": {
     "trinte": ">=0.1.0",
     "ejs": ">=0.8.0",
+    "ejs-locals": ">=1.0.2"
   },
   "description": "Ejs templates module for TrinteJS Javascript MVC Framework",
   "name": "trinte-ejs"
