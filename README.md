@@ -1,10 +1,14 @@
-# Ejs templates module for [TrinteJS](http://www.trintejs.com/) Javascript MVC Framework
+## Ejs templates module 
 
-## Installation
+Templates module for [TrinteJS](http://www.trintejs.com/) Javascript MVC Framework
+
+### Installation
 
     npm install trinte-ejs
 
-## Copyright & License
+### Copyright & License
+
+    (The MIT License)
 
     Copyright (c) 2013 Alexey Gordeyev
 
@@ -26,14 +30,14 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 
-## Resources
+### Resources
 
 - Visit the [author website](http://www.gordejev.lv).
 - Follow [@biggora](https://twitter.com/#!/biggora) on Twitter for updates.
 - Follow [agbiggora](https://www.facebook.com/agbiggora) on Facebook for updates.
 - Report issues on the [github issues](https://github.com/biggora/trinte-ejs/issues) page.
 
-## Recommend extensions
+### Recommend extensions
 
 - [CaminteJS](http://www.camintejs.com/) - Cross-db ORM for NodeJS
 - [2CO](https://github.com/biggora/2co) - is the module that will provide nodejs adapters for 2checkout API payment gateway.

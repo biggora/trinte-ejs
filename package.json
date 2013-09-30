@@ -4,7 +4,7 @@
     "ejs",
     "trinte",
     "trintejs",
-    "caminte",
+    "caminte"
   ],
   "engines": {"node": ">=0.6"},
   "licenses": [],
@@ -20,15 +20,15 @@
   "scripts": {"test": "nodeunit tests/test.js"},
   "repository": {
     "type": "git",
-    "url": "git://github.com/biggora/trinte-ejs.git"
+    "url": "git://github.com/biggora/trinte-creator.git"
   },
   "directories": {
     "lib": "lib",
+    "templates": "templates",
     "tests": "tests"
   },
   "dependencies": {
     "trinte": ">=0.1.0",
-    "ejs": ">=0.8.0",
     "ejs-locals": ">=1.0.2"
   },
   "description": "Ejs templates module for TrinteJS Javascript MVC Framework",
