@@ -1,7 +1,6 @@
 {
   "optionalDependencies": {},
   "keywords": [
-    "ejs",
     "trinte",
     "trintejs",
     "caminte"
@@ -24,13 +23,12 @@
   },
   "directories": {
     "lib": "lib",
-    "templates": "templates",
     "tests": "tests"
   },
   "dependencies": {
-    "trinte": ">=0.1.0",
-    "ejs-locals": ">=1.0.2"
+    "trinte": ">=0.1.0"
+    "ejs": ">=0.8.0"
   },
-  "description": "Ejs templates module for TrinteJS Javascript MVC Framework",
-  "name": "trinte-ejs"
+  "description": "Script Creation module for TrinteJS Javascript MVC Framework",
+  "name": "trinte-creator"
 }
