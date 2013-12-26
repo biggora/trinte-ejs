@@ -19,16 +19,17 @@
   "scripts": {"test": "nodeunit tests/test.js"},
   "repository": {
     "type": "git",
-    "url": "git://github.com/biggora/trinte-creator.git"
+    "url": "git://github.com/biggora/trinte-ejs.git"
   },
   "directories": {
     "lib": "lib",
+    "templates": "templates",
     "tests": "tests"
   },
   "dependencies": {
-    "trinte": ">=0.1.0"
+    "trinte": ">=0.1.0",
     "ejs": ">=0.8.0"
   },
   "description": "Script Creation module for TrinteJS Javascript MVC Framework",
-  "name": "trinte-creator"
+  "name": "trinte-ejs"
 }
