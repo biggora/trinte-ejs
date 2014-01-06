@@ -3,8 +3,8 @@
     <head>
         <meta charset='utf-8'>
         <meta name="generator" content="TrinteJS! - Javascript MVC Framework">
-        <meta name="author" content="APPNAME">
-        <title>APPNAME</title>
+        <meta name="author" content="<?= author ?>">
+        <title><?= pack ?></title>
         <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link type="text/css" href="/css/font-awesome.min.css" rel="stylesheet"/>
         <link type="text/css" href="/css/style.css" rel="stylesheet"/>
@@ -16,13 +16,12 @@
         <!--[if lt IE 9]>
           <script src="/js/html5.js"></script>
         <![endif]-->
-        <!--[if IE 7]>
-          <link rel="stylesheet" href="/css/font-awesome-ie7.min.css">
-        <![endif]-->
     </head>
     <body>
-        <!--page content-->
-        <%- body %>
+        <div id="page" class="container">
+            <!--page content-->
+            <%- body %>
+        </div>
         <script type="text/javascript" charset="utf-8" src="/js/app.js"></script>
     </body>
 </html>

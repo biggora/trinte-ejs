@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="TrinteJS! - Javascript MVC Framework">
-        <meta name="author" content="APPNAME">
-        <title>APPNAME</title>
+        <meta name="author" content="<?= author ?>">
+        <title><?= pack ?></title>
         <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link type="text/css" href="/css/font-awesome.min.css" rel="stylesheet"/>
         <link type="text/css" href="/css/style.css" rel="stylesheet"/>
@@ -15,22 +15,19 @@
         <meta name="csrf-param" content="_csrf">
         <meta name="csrf-token" content="<%= session._csrf %>">
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if IE 7]>
-          <link rel="stylesheet" href="/css/font-awesome-ie7.min.css">
-        <![endif]-->
         <!--[if lt IE 9]>
           <script src="/js/html5.js"></script>
         <![endif]-->
     </head>
     <body>
         <!-- header -->
-        <%- partial('header') %>
+        <%- partial('./_header') %>
         <!-- messages -->
-        <%- partial('messages') %>
+        <%- partial('./_messages') %>
         <!-- content -->
         <%- body %>
         <!-- footer -->
-        <%- partial('footer') %>
+        <%- partial('./_footer') %>
         <!-- confirm modal dialog -->
         <div id="dialog-confirm" class="modal fade" title="" tabindex="-1" role="dialog" aria-labelledby="dialog-confirm-header" aria-hidden="true">
             <div class="modal-dialog">

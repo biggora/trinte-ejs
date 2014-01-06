@@ -1,10 +1,11 @@
-<% layout('../default_layout') -%>
+<% layout('../_layout') -%>
 <?
 var modelVariable = modelName.toLowerCase();
 var basePath = modelName.toLowerCase();
 var basePathPlural = controllerName.toLowerCase();
 var addIncl = namespace && namespace !== "" ? "../" : "" ;
 var nsPath = namespace && namespace !== "" ? namespace + "_" : "" ;
+var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
 var ths = [];
 var tds = [];
 var fld = 2;
@@ -13,7 +14,7 @@ var dfield = 'id';
 fields.forEach(function(field){
 if(field.param_val == 'active'){
 fld = fld + 1;
-ths.push('<th class="span1">' + field.param_name + '</th>');
+ths.push('<th class="col-md-1 col-xs-1">' + field.param_name + '</th>');
 tds.push('<td><%- formVal(' + modelVariable + '.' + field.param_val + ') %></td>');
 }
 if(field.param_val == 'name' || field.param_val == 'title'){
@@ -26,7 +27,7 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
 <div id="content" class="container">
     <!-- page breadcrumb -->
     <ul class="breadcrumb">
-        <li><a href="/<?= nsPath ?>"><i class="icon-home"></i> Home</a></li>
+        <li><a href="<?= rootPath ?>"><i class="fa fa-home"></i> Home</a></li>
         <li class="active"><a href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>"><%- title %></a></li>
     </ul>
     <!-- page title -->
@@ -37,7 +38,7 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
     <div class="row">
         <div class="col-md-6 col-xs-6">
             <a href="<%- pathTo.new_<?= nsPath ?><?= modelVariable ?>() %>" class="btn btn-primary">
-                <i class="icon-plus icon-white"></i> New <?= modelName ?>
+                <i class="fa fa-plus"></i> New <?= modelName ?>
             </a>
         </div>
         <div class="col-md-6 col-xs-6">
@@ -54,7 +55,7 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th class="col-md-1 col-xs-1"><%- sortFor('_id' /* field name */,'ID' /* column title */, "Sorting column" /* tooltip message */) %></th>
+                        <th class="col-md-1 col-xs-1"><%- sortFor('id' /* field name */,'ID' /* column title */, "Sorting column" /* tooltip message */) %></th>
                         <?- ths.join("\n            ") ?>
                         <th class="col-md-3 col-xs-3" style="text-align:center">Action</th>
                     </tr>
@@ -68,9 +69,9 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
                         </td>
                         <?- tds.join("\n            ") ?>
                         <td style="text-align:right">
-                            <a class="btn btn-xs btn-default" href="<%- pathTo.show_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="icon-tasks"></i> Detail</a>
-                            <a class="btn btn-xs btn-default" href="<%- pathTo.edit_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="icon-edit"></i> Edit</a>
-                            <a class="btn btn-xs btn-danger" href="<%- pathTo.destroy_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" data-confirm="true" data-remote="true" data-method="delete" data-jsonp="(function (u) {location.href = u;})"><i class="icon-remove icon-white"></i> Delete</a>
+                            <a class="btn btn-xs btn-default" href="<%- pathTo.show_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="fa fa-tasks"></i> Detail</a>
+                            <a class="btn btn-xs btn-default" href="<%- pathTo.edit_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="fa fa-edit"></i> Edit</a>
+                            <a class="btn btn-xs btn-danger" href="<%- pathTo.destroy_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" data-confirm="true" data-remote="true" data-method="delete" data-jsonp="(function (u) {location.href = u;})"><i class="fa fa-times"></i> Delete</a>
                         </td>
                     </tr>
                     <% }) %>

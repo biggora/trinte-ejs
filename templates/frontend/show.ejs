@@ -1,4 +1,4 @@
-<% layout('../default_layout') -%>
+<% layout('../_layout') -%>
 <?
 var modelVariable = modelName.toLowerCase();
 var basePath = modelName.toLowerCase();
@@ -6,12 +6,13 @@ var basePathPlural = controllerName.toLowerCase();
 var addIncl = namespace && namespace !== "" ? "../" : "" ;
 var addView = namespace && namespace !== "" ? namespace + "/" : "" ;
 var nsPath = namespace && namespace !== "" ? namespace + "_" : "" ;
+var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
 ?>
 <!-- show page -->
 <div id="content" class="container">
     <!-- page breadcrumb -->
     <ul class="breadcrumb">
-        <li><a href="/<?= nsPath ?>"><i class="icon-home"></i> Home</a></li>
+        <li><a href="<?= rootPath ?>"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>"><?= controllerName ?></a></li>
         <li class="active"><a href="#"><%- title %></a></li>
     </ul>
@@ -26,16 +27,16 @@ var nsPath = namespace && namespace !== "" ? namespace + "_" : "" ;
                 <tbody>
                     <? fields.forEach(function (field) { ?>
                     <tr>
-                        <th class="span4"><?= field.param_name ?></th>
+                        <th class="col-lg-4 col-md-4"><?= field.param_name ?></th>
                         <td><%- formVal(<?= modelVariable ?>.<?= field.param_val ?>) %></td>
                     </tr>
                     <? }) ?>
                 </tbody>
             </table>
             <div class="well">
-                <a class="btn btn-default" href="<%- pathTo.edit_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="icon-edit"></i> Edit</a>
-                <a class="btn btn-danger" href="<%- pathTo.destroy_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" data-confirm="true" data-remote="true" data-method="delete" data-jsonp="(function (u) {location.href = u;})"><i class="icon-remove icon-white"></i> Delete</a>
-                <a class="btn btn-default" href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>" title="List <?= controllerName ?>"><i class="icon-tasks"></i> List <?= controllerName ?></a>
+                <a class="btn btn-default" href="<%- pathTo.edit_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="fa fa-edit"></i> Edit</a>
+                <a class="btn btn-danger" href="<%- pathTo.destroy_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" data-confirm="true" data-remote="true" data-method="delete" data-jsonp="(function (u) {location.href = u;})"><i class="fa fa-times"></i> Delete</a>
+                <a class="btn btn-default" href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>" title="List <?= controllerName ?>"><i class="fa fa-tasks"></i> List <?= controllerName ?></a>
                 <div class="clearfix"></div>
             </div>
         </div>

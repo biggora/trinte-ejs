@@ -1,4 +1,4 @@
-<% layout('../default_layout') -%>
+<% layout('../_layout') -%>
 <?
 var modelVariable = modelName.toLowerCase();
 var basePath = modelName.toLowerCase();
@@ -6,12 +6,13 @@ var basePathPlural = controllerName.toLowerCase();
 var addIncl = namespace && namespace !== "" ? "../" : "" ;
 var addView = namespace && namespace !== "" ? namespace + "/" : "" ;
 var nsPath = namespace && namespace !== "" ? namespace + "_" : "" ;
+var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
 ?>
 <!-- action page -->
 <div id="content" class="container">
     <!-- page breadcrumb -->
     <ul class="breadcrumb">
-        <li><a href="/<?= nsPath ?>"><i class="icon-home"></i> Home</a></li>
+        <li><a href="<?= rootPath ?>"><i class="fa fa-home"></i> Home</a></li>
         <li class="active"><a href="#"><%- title %></a></li>
     </ul>
     <!-- page title -->

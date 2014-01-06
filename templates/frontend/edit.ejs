@@ -1,4 +1,4 @@
-<% layout('../default_layout') -%>
+<% layout('../_layout') -%>
 <?
 var modelVariable = modelName.toLowerCase();
 var basePath = modelName.toLowerCase();
@@ -6,12 +6,13 @@ var basePathPlural = controllerName.toLowerCase();
 var addIncl = namespace && namespace !== "" ? "../" : "" ;
 var addView = namespace && namespace !== "" ? namespace + "/" : "" ;
 var nsPath = namespace && namespace !== "" ? namespace + "_" : "" ;
+var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
 ?>
 <!-- edit page -->
 <div id="content" class="container">
     <!-- page breadcrumb -->
     <ul class="breadcrumb">
-        <li><a href="/<?= nsPath ?>"><i class="icon-home"></i> Home</a></li>
+        <li><a href="<?= rootPath ?>"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>"><?= controllerName ?></a></li>
         <li class="active"><a href="#"><%- title %></a></li>
     </ul>
@@ -27,11 +28,11 @@ var nsPath = namespace && namespace !== "" ? namespace + "_" : "" ;
         <div class="well">
             <div  class="col-lg-12">
                 <button class="btn btn-primary" type="submit" value="Update">
-                    <i class="icon-ok icon-white"></i>
+                    <i class="fa fa-check"></i>
                     Save
                 </button>
                 <a class="btn btn-default" href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>">
-                    <i class="icon-tasks"></i>
+                    <i class="fa fa-tasks"></i>
                     Cancel
                 </a>
             </div>
