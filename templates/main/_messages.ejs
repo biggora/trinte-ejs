@@ -8,7 +8,7 @@
             </div>
             <% } %>
             <% flash = request.flash('error').pop(); if (flash) { %>
-            <div class="alert alert-error">
+            <div class="alert alert-danger">
                 <a class="close" data-dismiss="alert">×</a>
                 <%- flash %>
             </div>

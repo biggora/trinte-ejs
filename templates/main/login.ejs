@@ -1,34 +1,29 @@
-<% layout('_layout') -%>
+<% layout('./errors/_layout') -%>
 <div class="container">
     <div class="row">
-        <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-lg-6 col-sm-8 col-md-6 splash-inverse" style="margin-top:100px">
-            <form class="form-inline" role="form" method="POST" action='/login'>
-                <h2 class="login-header">
-                    <img src='/img/logo-inverse-lg.png'>
-                    <br/>
-                    <span class="brand-text">APPNAME</span>
-                </h2>
-                <div class="form-group col-lg-6 col-sm-6 col-md-6">
-                    <label class="sr-only" for="login">Login</label>
+        <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-lg-6 col-sm-8 col-md-6" style="margin-top:100px">
+            <form class="form" role="form" method="POST" action='/login'>
+                <div class="login-header">
+                    <h2 style="text-align:center;color:#333333;"><i class="fa fa-unlock-alt"></i> <?= pack ?></h2>
+                </div>
+                <div class="form-group col-lg-12 col-sm-12 col-md-12">
+                    <label for="login">Login</label>
                     <input required name="login" type="text" class="form-control" id="login" placeholder="Enter login">
                 </div>
-                <div class="form-group col-lg-6 col-sm-6 col-md-6">
-                    <label class="sr-only" for="password">Password</label>
+                <div class="form-group col-lg-12 col-sm-12 col-md-12">
+                    <label for="password">Password</label>
                     <div class="">
                         <input required name='passw' type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                 </div>
-                <div class="clearfix"><br class="hidden-xs"/><br/></div>
-                <div class="hidden-xs col-lg-12 col-sm-12" style="text-align:center">
-                    <a href="/" class="btn btn-large btn-default"><i class="fa fa-home"></i> Back to home</span></a>
-                    <button class="btn btn-large btn-default" type="clear"><i class="fa fa-times"></i> Clear</button>
-                    <button class="btn btn-large btn-default" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>
-                    <div class="clearfix"><br/></div>
+                <div class="clearfix"><br/></div>
+                <div class="col-xs-12 col-lg-6 col-sm-6" style="text-align:center">
+                    <a href="/" class="btn btn-md btn-block btn-default"><i class="fa fa-home"></i> Back to home</span></a>
                 </div>
-                <div class="visible-xs col-lg-12 col-sm-12" style="text-align:center">
-                    <a href="/" class="btn btn-large btn-default"><i class="fa fa-home"></i></a>
-                    <button class="btn btn-large btn-default" type="clear"><i class="fa fa-times"></i></button>
-                    <button class="btn btn-large btn-default" type="submit"><i class="fa fa-sign-in"></i></button>
+                <br class="hidden-lg hidden-md hidden-sm"/>
+                <div class="col-xs-12 col-lg-6 col-sm-6" style="text-align:center">
+                    <button class="btn btn-md btn-block btn-primary" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>
+                    <!-- <button class="btn btn-md btn-block btn-default" type="clear"><i class="fa fa-times"></i> Clear</button> -->                    
                 </div>
                 <input type="hidden" name="_csrf" value="<%= session._csrf %>"/>
             </form>
