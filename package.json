@@ -3,13 +3,19 @@
   "keywords": [
     "trinte",
     "trintejs",
-    "caminte"
+    "caminte",
+    "ejs",
+    "template"
   ],
-  "engines": {"node": ">=0.6"},
+  "engines": {
+      "node": ">=0.6"
+  },
   "licenses": [],
-  "devDependencies": {"nodeunit": ">=0.5.4"},
+  "devDependencies": {
+      "nodeunit": ">=0.5.4"
+  },
   "homepage": "http://www.trintejs.com/",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./index.js",
   "author": {
     "name": "Aleksej Gordejev",
@@ -28,7 +34,8 @@
   },
   "dependencies": {
     "trinte": ">=0.1.0",
-    "ejs": ">=0.8.0"
+    "ejs": ">=0.8.0",
+    "ejs-locals": "1.x"
   },
   "description": "Script Creation module for TrinteJS Javascript MVC Framework",
   "name": "trinte-ejs"

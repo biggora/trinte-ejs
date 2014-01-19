@@ -7,6 +7,17 @@ Templates module for [TrinteJS](http://www.trintejs.com/) Javascript MVC Framewo
 
     npm install trinte-ejs
 
+### Usage
+
+```js
+var trinteEjs = require('trinte-ejs');
+
+var tplDir  = trinteEjs.getTemplatesDir();
+var tplPath = trinteEjs.getTemplate('edit');
+var tplBody = trinteEjs.getTemplateText('index');
+
+```
+
 ### Copyright & License
 
     (The MIT License)
