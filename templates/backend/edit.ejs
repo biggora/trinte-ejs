@@ -21,9 +21,8 @@ var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
         <h1><%- title %></h1>
     </div>
     <!-- form -->
-    <form method="post" action="<%- pathTo.update_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" class="form-horizontal" role="form">
-        <input type="hidden" name="_method" value="put"/>
-        <input type="hidden" name="_csrf" value="<%= session._csrf %>" />
+    <form method="POST" action="<%- pathTo.update_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" class="form-horizontal" role="form">
+        <input type="hidden" name="_method" value="PUT"/>
         <%- partial('form',{ locals : { <?= modelVariable ?> : <?= modelVariable ?> } }) %>
         <div class="well">
             <div  class="col-lg-12">

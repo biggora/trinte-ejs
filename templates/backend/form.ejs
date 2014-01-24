@@ -2,17 +2,58 @@
 var modelVariable = modelName.toLowerCase();
 var basePath = modelName.toLowerCase();
 var basePathPlural = controllerName.toLowerCase();
+var addScripts = {};
 ?>
 <div class="col-lg-6 col-md-6">
-    <!--fields list-->
+    <!-- <?= modelVariable ?> fields list -->
     <? fields.forEach(function (field) { ?>
+    <!-- field <?= modelVariable ?>.<?= field.param_val ?> -->
+    <? switch(field.param_type) { 
+           case 'boolean':
+           case 'bool': ?>
     <div class="form-group">
-        <label for="<?= modelVariable ?>_<?= field.param_val ?>" class="col-lg-3 col-md-3 control-label"><?= field.param_name ?>:</label>
+        <%- form.label('<?= field.param_val ?>', '<?= field.param_name ?>', { class : 'col-lg-3 col-md-3 control-label' }, <?= modelVariable ?> ) %>
         <div class="col-lg-9 col-md-9">
-            <input class="form-control" type="text" name="<?= modelVariable ?>[<?= field.param_val ?>]" id="<?= modelVariable ?>_<?= field.param_val ?>" value="<%- formVal(<?= modelVariable ?>.<?= field.param_val ?>) %>"/>
+            <div class="radio pull-left" style="margin-right: 15px">
+                <label>
+                    <%- form.radio('<?= field.param_val ?>',{ value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?>, 1, '_0' ) %>
+                    Enabled
+                </label>
+            </div>
+            <div class="radio pull-left">
+                <label>
+                    <%- form.radio('<?= field.param_val ?>',{ value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?>, 0, '_1' ) %>
+                    Disabled
+                </label>
+            </div>
+        </div>
+    </div> 
+    <?      break; 
+      case 'text': ?>
+    <div class="form-group">
+        <%- form.label('<?= field.param_val ?>', '<?= field.param_name ?>', { class : 'col-lg-3 col-md-3 control-label' }, <?= modelVariable ?> ) %>
+        <div class="col-lg-9 col-md-9">
+            <%- form.textarea('<?= field.param_val ?>',{ rows : 5, class : 'form-control', value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?> ) %>
+        </div>
+    </div>  
+    <?       break; 
+       case 'date': ?>
+    <div class="form-group">
+        <%- form.label('<?= field.param_val ?>', '<?= field.param_name ?>', { class : 'col-lg-3 col-md-3 control-label' }, <?= modelVariable ?> ) %>
+        <div class="col-lg-9 col-md-9">
+            <%- form.input('<?= field.param_val ?>',{ class : 'form-control', type : 'text', value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?> ) %>
         </div>
     </div>
-    <? }) ?>
+    <?   break; 
+       default: ?>
+    <div class="form-group">
+        <%- form.label('<?= field.param_val ?>', '<?= field.param_name ?>', { class : 'col-lg-3 col-md-3 control-label' }, <?= modelVariable ?> ) %>
+        <div class="col-lg-9 col-md-9">
+            <%- form.input('<?= field.param_val ?>',{ class : 'form-control', type : 'text', value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?> ) %>
+        </div>
+    </div>    
+    <? } }) ?>
+    <input type="hidden" name="_csrf" value="<%- request.csrfToken() %>" />
 </div>
 <div class="col-lg-6 col-md-6">
 
