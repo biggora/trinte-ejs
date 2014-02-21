@@ -13,7 +13,7 @@
                 <div class="form-group col-lg-12 col-sm-12 col-md-12">
                     <label for="password">Password</label>
                     <div class="">
-                        <input required name='passw' type="password" class="form-control" id="password" placeholder="Password">
+                        <input required name='password' type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                 </div>
                 <div class="clearfix"><br/></div>
@@ -25,7 +25,7 @@
                     <button class="btn btn-md btn-block btn-primary" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>
                     <!-- <button class="btn btn-md btn-block btn-default" type="clear"><i class="fa fa-times"></i> Clear</button> -->                    
                 </div>
-                <input type="hidden" name="_csrf" value="<%= session._csrf %>"/>
+                <input type="hidden" name="_csrf" value="<%= request.csrfToken() %>"/>
             </form>
             <div class="clearfix"><br/></div>
         </div>

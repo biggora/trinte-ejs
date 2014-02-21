@@ -1,5 +1,8 @@
 {
-  "optionalDependencies": {},
+  "name": "trinte-ejs",
+  "description": "Templates module for TrinteJS Javascript MVC Framework.",
+  "homepage": "http://www.trintejs.com/",
+  "version": "0.0.5",
   "keywords": [
     "trinte",
     "trintejs",
@@ -7,36 +10,45 @@
     "ejs",
     "template"
   ],
-  "engines": {
-      "node": ">=0.6"
-  },
-  "licenses": [],
-  "devDependencies": {
-      "nodeunit": ">=0.5.4"
-  },
-  "homepage": "http://www.trintejs.com/",
-  "version": "0.0.4",
-  "main": "./index.js",
+  "licenses": [{
+      "type": "MIT",
+      "url": "http://github.com/biggora/trinte-ejs/blob/master/LICENSE"
+  }],
   "author": {
     "name": "Aleksej Gordejev",
     "email": "aleksej@gordejev.lv",
     "url": "https://github.com/biggora/"
   },
-  "scripts": {"test": "nodeunit tests/test.js"},
+  "contributors": [{
+        "name": "Aleksej Gordejev",
+        "email": "aleksej@gordejev.lv",
+        "url": "https://github.com/biggora/"
+  }],
   "repository": {
     "type": "git",
     "url": "git://github.com/biggora/trinte-ejs.git"
   },
+  "bugs": {
+        "url" : "http://github.com/biggora/trinte-ejs/issues",
+        "email" : "aleksej@gordejev.lv"
+  },
+  "main": "./index.js",
+  "scripts": {"test": "nodeunit tests/test.js"},
   "directories": {
     "lib": "lib",
     "templates": "templates",
     "tests": "tests"
+  },
+  "engines": {
+      "node": ">=0.8"
   },
   "dependencies": {
     "trinte": ">=0.1.0",
     "ejs": ">=0.8.0",
     "ejs-locals": "1.x"
   },
-  "description": "Script Creation module for TrinteJS Javascript MVC Framework",
-  "name": "trinte-ejs"
+  "devDependencies": {
+      "nodeunit": ">=0.5.4"
+  },
+  "optionalDependencies": {}
 }
