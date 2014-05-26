@@ -21,16 +21,28 @@ var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
         <h1><%- title %></h1>
     </div>
     <!-- form -->
-    <form method="post" action="<%- pathTo.update_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" class="form-horizontal" role="form">
-        <input type="hidden" name="_method" value="put"/>
-        <input type="hidden" name="_csrf" value="<%= session._csrf %>" />
-        <%- partial('form',{ locals : { <?= modelVariable ?> : <?= modelVariable ?> } }) %>
-        <div class="well">
+    <form id="editor" name="editor" method="POST" action="<%- pathTo.update_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" class="form-horizontal" role="form">
+        <input type="hidden" name="_method" value="PUT"/>
+		<input type="hidden" name="_action" value="save"/>
+		<%- partial('form',{ locals : { <?= modelVariable ?> : <?= modelVariable ?> } }) %>
+		<div class="well">
             <div  class="col-lg-12">
-                <button class="btn btn-primary" type="submit" value="Update">
+				<a onClick="document.forms.editor._action.value='copy';document.forms.editor.submit()" class="btn btn-default">
+                    <i class="fa fa-files-o"></i>
+                    Save & Copy
+                </a>
+                <a onClick="document.forms.editor._action.value='new';document.forms.editor.submit()" class="btn btn-default">
+                    <i class="fa fa-files-o"></i>
+                    Save & New
+                </a>
+                <a onClick="document.forms.editor._action.value='apply';document.forms.editor.submit()" class="btn btn-default">
                     <i class="fa fa-check"></i>
+                    Apply
+                </a>
+                <a onClick="document.forms.editor._action.value='save';document.forms.editor.submit()" class="btn btn-primary">
+                    <i class="fa fa-floppy-o"></i>
                     Save
-                </button>
+                </a>
                 <a class="btn btn-default" href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>">
                     <i class="fa fa-tasks"></i>
                     Cancel
