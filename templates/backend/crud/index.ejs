@@ -45,10 +45,10 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
 
         </div>
         <div class="col-md-3 col-xs-12">
-            <form class="admin-searchbox pull-right" method="get" action="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>">
+            <form id="search" class="admin-searchbox pull-right" method="get" action="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>">
                 <div class="input-group">
                     <input name="<?= dfield ?>" class="form-control" type="text" placeholder="Search <?= basePathPlural ?> by <?= dfield ?>" aria-describedby="basic-addon2">
-                    <button type="submit" class="input-group-addon" id="basic-addon2">Search</button>
+                    <a onclick="document.forms.search.submit()" href="javascript:void(0);" class="input-group-addon" id="basic-addon2">Search</a>
                 </div>
             </form>
         </div>

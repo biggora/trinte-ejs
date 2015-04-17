@@ -14,21 +14,19 @@ var addScripts = {};
     <div class="form-group">
         <%- form.label('<?= field.param_val ?>', '<?= field.param_name ?>', { class : 'col-lg-3 col-md-3 control-label' }, <?= modelVariable ?> ) %>
         <div class="col-lg-9 col-md-9">
-            <div class="radio pull-left" style="margin-right: 15px">
-                <label>
-                    <%- form.radio('<?= field.param_val ?>',{ value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?>, 1, '_0' ) %>
+            <div class="btn-group btn-group-justified" data-toggle="buttons" role="group">
+                <label class="btn btn-radio btn-yes <%- <?= modelVariable ?>.<?= field.param_val ?> == 1 ? 'active':'' %>">
+                    <%- form.radio('<?= field.param_val ?>',{ autocomplete: 'off', value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?>, 1, '_0' ) %>
                     Enabled
                 </label>
-            </div>
-            <div class="radio pull-left">
-                <label>
-                    <%- form.radio('<?= field.param_val ?>',{ value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?>, 0, '_1' ) %>
+                <label class="btn btn-radio btn-no <%- <?= modelVariable ?>.<?= field.param_val ?> == 0 ? 'active':'' %>">
+                    <%- form.radio('<?= field.param_val ?>',{ autocomplete: 'off', value : <?= modelVariable ?>.<?= field.param_val ?> }, <?= modelVariable ?>, 0, '_1' ) %>
                     Disabled
                 </label>
             </div>
         </div>
-    </div> 
-    <?      break; 
+    </div>
+    <?      break;
       case 'text': ?>
     <div class="form-group">
         <%- form.label('<?= field.param_val ?>', '<?= field.param_name ?>', { class : 'col-lg-3 col-md-3 control-label' }, <?= modelVariable ?> ) %>
