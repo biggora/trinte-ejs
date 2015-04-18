@@ -32,7 +32,13 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
     </ul>
     <!-- page title -->
     <div class="page-header">
-        <h1><%- title %></h1>
+        <h2>
+			<span class="fa-stack">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-bars fa-stack-1x fa-inverse"></i>
+			</span>
+            <%- title %>
+        </h2>
     </div>
     <!-- page filter and submenu -->
     <div class="row">
@@ -46,9 +52,11 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
         </div>
         <div class="col-md-3 col-xs-12">
             <form id="search" class="admin-searchbox pull-right" method="get" action="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>">
-                <div class="input-group">
+                <div class="input-group input-group-sm">
                     <input name="<?= dfield ?>" class="form-control" type="text" placeholder="Search <?= basePathPlural ?> by <?= dfield ?>" aria-describedby="basic-addon2">
-                    <a onclick="document.forms.search.submit()" href="javascript:void(0);" class="input-group-addon" id="basic-addon2">Search</a>
+                    <a onclick="document.forms.search.submit()" href="javascript:void(0);" class="input-group-addon btn btn-default" id="basic-addon2">
+                        <i class="fa fa-search"></i>
+                    </a>
                 </div>
             </form>
         </div>
@@ -98,5 +106,5 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
     </div>
 </div>
 <!-- includes -->
-<script type="text/javascript" charset="utf-8" src="/js/bs/typeahead.min.js"></script>
+
 <!-- end <?= basePathPlural ?> index page -->

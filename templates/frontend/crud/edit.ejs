@@ -18,7 +18,13 @@ var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
     </ul>
     <!-- page title -->
     <div class="page-header">
-        <h1><%- title %></h1>
+        <h2>
+			<span class="fa-stack">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+			</span>
+            <%- title %>
+        </h2>
     </div>
     <!-- form -->
     <form id="editor" name="editor" method="POST" action="<%- pathTo.update_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" class="form-horizontal" role="form">
@@ -43,7 +49,7 @@ var rootPath = namespace && namespace !== "" ? "/" + namespace : "/" ;
                     <i class="fa fa-floppy-o"></i>
                     Save
                 </a>
-                <a href="javascript:void(0);" class="btn btn-default" href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>">
+                <a href="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>" class="btn btn-default">
                     <i class="fa fa-tasks"></i>
                     Cancel
                 </a>
