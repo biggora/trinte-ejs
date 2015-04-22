@@ -3,9 +3,11 @@
 
 Templates module for [TrinteJS](http://www.trintejs.com/) Javascript MVC Framework
 
+Work only via [TrinteJS](https://github.com/biggora/trinte)
+
 ### Installation
 
-    npm install trinte-ejs
+    npm install trinte-ejs --save
 
 ### Usage
 
