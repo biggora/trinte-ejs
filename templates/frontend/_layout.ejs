@@ -12,17 +12,17 @@
         <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link type="text/css" href="/css/addons.min.css" rel="stylesheet"/>
         <link type="text/css" href="/css/style.css" rel="stylesheet"/>
-        <script type="text/javascript" charset="utf-8" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/vendor/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="/js/bootstrap.min.js"></script>
         <meta name="x-csrf-param" content="_csrf">
         <meta name="x-csrf-token" content="<%- request.csrfToken() %>">
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-        <script src="/js/html5shiv.min.js"></script>
-        <script src="/js/respond.min.js"></script>
+        <script src="/vendor/html5shiv/dist/html5shiv.min.js"></script>
+        <script src="/vendor/respond/dest/respond.min.js"></script>
         <![endif]-->
         <!-- <link rel="canonical" href=""> -->
-        <%- site_headers(headers) %>
+        <%- siteHeaders(headers) %>
     </head>
     <body>
         <!-- header -->
