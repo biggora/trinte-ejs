@@ -1,9 +1,8 @@
 [![NPM version](https://badge.fury.io/js/trinte-ejs.png)](http://badge.fury.io/js/trinte-ejs)
 ## Ejs templates module 
 
-Templates module for [TrinteJS](http://www.trintejs.com/) Javascript MVC Framework
+Templates module for [TrinteJS](http://www.trintejs.com/) Javascript MVC Framework. TrinteJS is a MVC boilerplate for ExpressJS backed by [CaminteJS ORM](https://github.com/biggora/caminte) and Bootstrap.
 
-Work only via [TrinteJS](https://github.com/biggora/trinte)
 
 ### Installation
 
