@@ -53,16 +53,16 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
         <div class="col-md-3 col-xs-12">
             <form id="search" class="admin-searchbox pull-right" method="get" action="<%- pathTo.<?= nsPath ?><?= basePathPlural ?>() %>">
                 <div class="input-group">
-                    <input name="<?= dfield ?>" class="form-control" type="text" placeholder="Search <?= basePathPlural ?> by <?= dfield ?>" aria-describedby="basic-addon2">
-                    <a onclick="document.forms.search.submit()" href="javascript:void(0);" class="input-group-addon btn btn-default" id="basic-addon2">
+                    <input name="<?= dfield ?>" class="form-control" type="text" placeholder="Search <?= basePathPlural ?> by <?= dfield ?>" aria-describedby="search-addon">
+                    <a onclick="document.forms.search.submit()" href="javascript:void(0);" class="input-group-addon btn btn-default" id="search-addon">
                         <i class="fa fa-search"></i>
                     </a>
                 </div>
             </form>
         </div>
         <div class="clearfix"></div>
-        <br/>
     </div>
+    <br/>
     <!-- <?= basePathPlural ?> list -->
     <div class="row">
         <div class="col-md-12">
@@ -84,9 +84,18 @@ tds.push('<td><a href="<%- pathTo.show_' + nsPath + modelVariable + '(' + modelV
                         </td>
                         <?- tds.join("\n                        ") ?>
                         <td style="text-align:right">
-                            <a class="btn btn-xs btn-default" href="<%- pathTo.show_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="fa fa-tasks"></i> Detail</a>
-                            <a class="btn btn-xs btn-default" href="<%- pathTo.edit_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>"><i class="fa fa-edit"></i> Edit</a>
-                            <a class="btn btn-xs btn-danger" href="<%- pathTo.destroy_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" data-confirm="true" data-remote="true" data-method="delete" data-jsonp="(function (u) {location.href = u;})"><i class="fa fa-times"></i> Delete</a>
+                            <a class="btn btn-xs btn-default" href="<%- pathTo.show_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>">
+                                <i class="fa fa-tasks"></i>
+                                <span class="hidden-xs hidden-sm hidden-md"> Detail</span>
+                            </a>
+                            <a class="btn btn-xs btn-default" href="<%- pathTo.edit_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>">
+                                <i class="fa fa-edit"></i>
+                                <span class="hidden-xs hidden-sm hidden-md"> Edit</span>
+                            </a>
+                            <a class="btn btn-xs btn-danger" href="<%- pathTo.destroy_<?= nsPath ?><?= modelVariable ?>(<?= modelVariable ?>) %>" data-confirm="true" data-remote="true" data-method="delete" data-jsonp="(function (u) {location.href = u;})">
+                                <i class="fa fa-times"></i>
+                                <span class="hidden-xs hidden-sm hidden-md"> Delete</span>
+                            </a>
                         </td>
                     </tr>
                     <% }) %>

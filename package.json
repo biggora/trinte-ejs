@@ -2,7 +2,7 @@
   "name": "trinte-ejs",
   "description": "Templates module for TrinteJS Javascript MVC Framework.",
   "homepage": "http://www.trintejs.com/",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "trinte",
     "trintejs",
@@ -10,10 +10,7 @@
     "ejs",
     "template"
   ],
-  "licenses": [{
-      "type": "MIT",
-      "url": "http://github.com/biggora/trinte-ejs/blob/master/LICENSE"
-  }],
+  "license": "MIT",
   "author": {
     "name": "Aleksej Gordejev",
     "email": "aleksej@gordejev.lv",
